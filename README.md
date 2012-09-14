@@ -16,7 +16,8 @@ Maven configuration to make:
  1. mvn clean site
  2. mvn site:stage
  
- to build at one by one:
+ To build at one by one:
+ 
  1. mvn javadoc:javadoc
  2. mvn cobertura:cobertura
  3. mvn site:site -DskipTests=true
