@@ -66,7 +66,7 @@
                 <version>2.5.1</version>
             </plugin>
 
-            <plugin>
+            <!-- <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.8.1</version>
                 <configuration>
@@ -78,11 +78,11 @@
                     <javadocDirectory>${project.parent.basedir}/docs/javadoc</javadocDirectory>
                     <docfilessubdirs>true</docfilessubdirs>
 
-                    <!--<dependencyDetailsEnabled>false</dependencyDetailsEnabled>
-                    <dependencyLocationsEnabled>false</dependencyLocationsEnabled>-->
+                    <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+                    <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
 
                     <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
-                    <!-- <docletPath>/path/to/UmlGraph.jar</docletPath> -->
+                    <docletPath>/path/to/UmlGraph.jar</docletPath>
 
                     <docletArtifact>
                         <groupId>org.umlgraph</groupId>
@@ -114,7 +114,7 @@
                     </reportSet>
                 </reportSets>
 
-            </plugin>
+            </plugin> -->
         </plugins>
 
     </reporting>
@@ -133,32 +133,32 @@
                 </configuration>
             </plugin>
 
-            <!-- to generate dashboar report in parent project -->
-            <plugin>
-                <artifactId>maven-javadoc-plugin</artifactId>
+            <!-- to generate dashboard report in parent project -->
+           <plugin>
+					<artifactId>maven-javadoc-plugin</artifactId>
 
-                <version>2.8.1</version>
-                <inherited>false</inherited>
-                <configuration>
-                    <docencoding>UTF-8</docencoding>
-                    <docfilessubdirs>true</docfilessubdirs>
-                    <bottom>${javadoc.copyright}</bottom>
+					<version>2.8.1</version>
+					<inherited>false</inherited>
+					<configuration>
+						<docencoding>UTF-8</docencoding>
+						<docfilessubdirs>true</docfilessubdirs>
+						<bottom>${javadoc.copyright}</bottom>
+						<aggregate>true</aggregate>
+						<stylesheetfile>src/javadoc/stylesheet.css</stylesheetfile>
+						<javadocDirectory>src/javadoc</javadocDirectory>
+						<docfilessubdirs>true</docfilessubdirs>
+					</configuration>
 
-                    <stylesheetfile>${project.basedir}/docs/javadoc/stylesheet.css</stylesheetfile>
-                    <javadocDirectory>${project.basedir}/docs/javadoc</javadocDirectory>
-                    <docfilessubdirs>true</docfilessubdirs>
-                </configuration>
-
-            </plugin>
+				</plugin>
 
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <inherited>false</inherited>
-                <version>3.1</version>
+                <version>3.3</version>
                 <configuration>
-                    <siteDirectory>${basedir}/src/site</siteDirectory>
+                    <siteDirectory>${session.executionRootDirectory}/src/site</siteDirectory>
                 </configuration>
             </plugin>
 
@@ -176,7 +176,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.1</version>
+                    <version>3.3</version>
                     <configuration>
                         <siteDirectory>${project.parent.basedir}/src/site</siteDirectory>
                     </configuration>
